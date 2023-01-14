@@ -10,7 +10,7 @@ def find_words(file_name, predicate):
 
 def accepted_words(letters: list, must_have: list, word: str, must_have_count=2):
     word = word.lower()
-    word = word.strip().strip('.-')
+    word = word.strip().strip(".-")
 
     for l in word:
         if l not in letters:
@@ -23,6 +23,5 @@ def accepted_words(letters: list, must_have: list, word: str, must_have_count=2)
 
 def normalize(word):
     word = word.lower()
-    word = word.strip().strip('.-')
+    word = word.strip().strip(".-")
     return word
-
