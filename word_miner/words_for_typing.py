@@ -8,7 +8,7 @@ def find_words(file_name, predicate):
     return words
 
 
-def accepted_words(letters: list, must_have: list, word: str):
+def accepted_words(letters: list, must_have: list, word: str, must_have_count=2):
     word = word.lower()
     word = word.strip().strip('.-')
 
@@ -16,7 +16,7 @@ def accepted_words(letters: list, must_have: list, word: str):
         if l not in letters:
             return False
     for m in must_have:
-        if word.count(m) < 2:
+        if word.count(m) < must_have_count:
             return False
     return True
 
