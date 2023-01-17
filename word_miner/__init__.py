@@ -38,13 +38,7 @@ def typing(dictionary, allowed, must_have, must_have_count, max_length, _or):
     """DICTIONARY is a utf-8 file with words separated by new line"""
     words = find_words(
         dictionary,
-        partial(
-            accepted_words,
-            allowed,
-            must_have,
-            must_have_count,
-            _or
-        ),
+        partial(accepted_words, allowed, must_have, must_have_count, _or),
     )
     shuffle(words)
     print(" ".join(filter(lambda w: len(w) <= max_length, words)))

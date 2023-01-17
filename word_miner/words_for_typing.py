@@ -7,7 +7,9 @@ def find_words(f, predicate):
     return words
 
 
-def accepted_words(letters: list, must_have: list, must_have_count: int, _or: bool, word: str):
+def accepted_words(
+    letters: list, must_have: list, must_have_count: int, _or: bool, word: str
+):
     for l in word:
         if l not in letters:
             return False
