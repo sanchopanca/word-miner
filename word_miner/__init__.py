@@ -27,7 +27,14 @@ from word_miner.words_for_typing import accepted_words, find_words
     default=10,
     help="controls the maximum length of the words",
 )
-def typing(dictionary, allowed, must_have, must_have_count, max_length):
+@click.option(
+    "--or",
+    "_or",
+    is_flag=True,
+    default=False,
+    help="if multiple --must-have are passed, this flag controls if all of them must be present in the result words or just one",
+)
+def typing(dictionary, allowed, must_have, must_have_count, max_length, _or):
     """DICTIONARY is a utf-8 file with words separated by new line"""
     words = find_words(
         dictionary,
@@ -35,7 +42,8 @@ def typing(dictionary, allowed, must_have, must_have_count, max_length):
             accepted_words,
             allowed,
             must_have,
-            must_have_count=must_have_count,
+            must_have_count,
+            _or
         ),
     )
     shuffle(words)
