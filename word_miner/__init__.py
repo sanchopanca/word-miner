@@ -10,20 +10,24 @@ from word_miner.words_for_typing import accepted_words, find_words
 @click.argument("dictionary", type=click.File())
 @click.option(
     "--allowed",
+    "-a",
     help="a set of letters as one string. resulting words will only have letters from this set",
 )
 @click.option(
     "--must-have",
+    "-m",
     multiple=True,
     help="a string representing which letter or combinations of letters must be present",
 )
 @click.option(
     "--must-have-count",
+    "-c",
     default=1,
     help="controls how many times the pattern from --must-have must be present",
 )
 @click.option(
     "--max-length",
+    "-l",
     default=10,
     help="controls the maximum length of the words",
 )
