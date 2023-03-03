@@ -11,7 +11,7 @@ def accepted_words(
     letters: list, must_have: list, must_have_count: int, _or: bool, word: str
 ):
     for l in word:
-        if l not in letters:
+        if letters and l not in letters:
             return False
     result = not _or
     for m in must_have:
